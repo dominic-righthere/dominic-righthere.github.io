@@ -5,14 +5,15 @@ import "../components/style.css"
 
 const Index = () => {
 
-  // https://spectrum.chat/gatsby-js/general/referenceerror-document-is-not-defined~acb809fd-261a-48f5-9a04-bdb92fb80a5d
-  const [width, setWidth] = React.useState(typeof document !== `undefined` ? document.getElementById('portal') : null);
+
+  const [width, setWidth] = React.useState(500);
 
   const handleWindowResize = () => {
     setWidth(document.body.clientWidth);
   }
 
   React.useEffect(() => {
+    handleWindowResize();
     window.addEventListener("resize", handleWindowResize);
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
