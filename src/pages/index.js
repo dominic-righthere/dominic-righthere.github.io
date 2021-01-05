@@ -5,8 +5,8 @@ import "../components/style.css"
 
 const Index = () => {
 
-
-  const [width, setWidth] = React.useState(document.body.clientWidth);
+  // https://spectrum.chat/gatsby-js/general/referenceerror-document-is-not-defined~acb809fd-261a-48f5-9a04-bdb92fb80a5d
+  const [width, setWidth] = React.useState(typeof document !== `undefined` ? document.getElementById('portal') : null);
 
   const handleWindowResize = () => {
     setWidth(document.body.clientWidth);
