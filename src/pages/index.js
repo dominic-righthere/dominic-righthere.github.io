@@ -7,11 +7,9 @@ const Index = () => {
 
 
   const [width, setWidth] = React.useState(document.body.clientWidth);
-  const [height, setHeight] = React.useState(window.innerHeight);
 
   const handleWindowResize = () => {
     setWidth(document.body.clientWidth);
-    setHeight(window.innerHeight);
   }
 
   React.useEffect(() => {
